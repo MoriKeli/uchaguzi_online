@@ -446,29 +446,7 @@
 						<div class="card-body pb-2">
 							<h5 class="card-title">Registered Voters</h5>
 							<canvas id="votersChart" class="mb-3" style="max-height: 400px;"></canvas>
-							<script>
-								document.addEventListener("DOMContentLoaded", () => {
-								new Chart(document.querySelector('#votersChart'), {
-									type: 'doughnut',
-									data: {
-									labels: [
-										{% if male_reg_voters %}'Male(s)',{% endif %} {% if female_reg_voters %}'Female(s)'{% endif %}
-									],
-									datasets: [{
-										label: 'Registered Voters',
-										data: [
-											{{male_reg_voters}}, {{female_reg_voters}}
-										],
-										backgroundColor: [
-											'#09ac52',
-											'#ec0b0b',
-										],
-										hoverOffset: 4
-									}]
-									}
-								});
-								});
-							</script>
+							<script src="{% static 'voters-page/js/charts.js' %}"></script>
 						</div>
 					</div>
 
